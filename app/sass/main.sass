@@ -1,0 +1,274 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+	&.ishome
+		.site-header
+			height: 100vh
+			min-height: 600px
+			background-color: $dark
+
+			.top-line
+				padding-top: 30px
+				position: absolute
+				width: 100%
+				z-index: 1
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+
+.h1, .h2, .h3, .h4, .h5, .h6
+	line-height: 1.4
+	text-transform: uppercase
+ 
+
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: 16px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
+
+.logo
+	img
+		width: 150px
+		height: auto
+		margin-left: 45px
+.phone
+	position: absolute
+	right: 85px
+	top: 30px
+	font-family: 'firasans-ex'
+	font-size: 22px
+	color: #fff
+	white-space: nowrap
+	.fal
+		color: #aaa
+		font-size: 22px
+		margin-right: 5px
+
+.hamburger
+	position: absolute
+	right: 0
+	top: 24px
+	
+.mm-navbar
+	height: auto
+	position: relative
+	padding-bottom: 20px
+	margin-top: -10px
+	border-bottom: none
+
+	.mm-navbar__title 
+		padding: 0
+
+		img
+			width: 100px
+			height: auto
+
+.mm-panel:before
+	height: 0
+
+.mm-listview
+	li
+		padding-left: 20px
+.mm-listitem
+	transition: all 0.3s
+	&:hover
+		background-color: rgba(255,255,255, .1)
+	&:after
+		display: none
+
+.mm-listitem.mm-listitem_selected
+	color: $accent
+
+.mm-listitem_selected>.mm-listitem__text 
+	background-color: transparent
+
+.mm-panels>.mm-panel>.mm-listview:first-child, .mm-panels>.mm-panel>.mm-navbar+.mm-listview
+	margin-top: 0
+
+.header-flex
+	height: 100%
+	display: flex
+
+.flex-center
+	margin: auto
+
+.welcome
+	p
+		font-size: 14px
+		text-transform: uppercase
+		display: flex
+		align-items: center
+		white-space: nowrap
+		margin: 0
+		// margin-bottom: -10px
+
+		span
+			margin: 0 10px
+
+		&:before, &:after
+			content: ''
+			height: 1px
+			width: 100%
+			position: relative
+			background-color: #fff
+			display: inline-block
+	.h1
+		font-weight: 100
+		font-size: 70px
+		margin: 0
+		border-bottom: 1px solid #fff
+		line-height: 1.6
+		padding-bottom: 5px
+		white-space: nowrap 
+
+	strong
+		display: block
+		text-transform: uppercase
+		font-size: 17px
+		margin-top: 25px
+
+		.fas
+			margin-right: 10px
+			font-size: 12px
+			color: #555
+
+			&:last-child
+				margin-left: 10px
+				margin-right: inherit
+
+
+.header-composition
+	text-align: center
+	position: relative
+
+	p
+		margin-top: 40px
+		 
+	.button
+		margin-top: 25px
+
+.header-social
+	display: flex
+	position: absolute
+	padding: 0 12px
+	right: 0
+	top: 0
+	height: 100%
+	border-left: 1px solid rgba(255, 255, 255, 0.1)
+
+.soc
+	margin: auto
+
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+	a
+		display: block
+		color: #2c2c2c
+		font-size: 17px
+		background-color: rgba(255, 255, 255, 0.2)
+		width: 38px
+		height: 38px
+		border-radius: 50%
+		line-height: 38px 
+		margin: 18px 0
+		text-align: center
+		transition: all .25s ease
+
+		&:hover
+			background-color: rgba(255, 255, 255, 0.3)
+.header-contacts
+	position: absolute
+	bottom: 0
+	left: 0
+	border-top: 1px solid rgba(255, 255, 255, .15)
+	padding: 12px 0
+	width: 100%
+	background-color: rgba(0, 0, 0, .15)
+
+	.header-phone
+		text-align: center
+		font-family: firasans-ex, sans-serif
+
+	.fal
+		color: #555
+		margin-right: 5px
+
+@import "media" // Always at the end
